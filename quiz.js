@@ -29,7 +29,18 @@ $(function() {
     
     pointUpdate: function(e) {
       var answer2 = $('.js-answer2').val();
+      if (answer2 == 0) {
+        $('.js-answer2').css("background-color", "red");
+      } else {
+        $('.js-answer2').css("background-color", "green");
+      }
+
       var answer3 = $('.js-answer3').val();
+      if (answer3 == 0) {
+        $('.js-answer3').css("background-color", "red");
+      } else {
+        $('.js-answer3').css("background-color", "green");
+      }
       var answerTotals = parseInt(answer2) + parseInt(answer3);
       $('.js-total2').html(answerTotals);
     },
