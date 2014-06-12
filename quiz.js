@@ -23,11 +23,13 @@ $(function() {
   QuizView = Backbone.View.extend ({
     
     events: {
-      'change .js-answer2': 'pointUpdate'
+      'change .js-answer2': 'pointUpdate',
+      'change .js-answer3': 'pointUpdate'
     },
     
     pointUpdate: function(e) {
-      $('.js-total2').html($('.js-answer2').val());
+      var value1 = $('.js-total2').html($('.js-answer2').val());
+      var value2 = $('.js-total2').html($('.js-answer3').val());
     },
 
     render: function() {
