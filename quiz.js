@@ -28,8 +28,10 @@ $(function() {
     },
     
     pointUpdate: function(e) {
-      var value1 = $('.js-total2').html($('.js-answer2').val());
-      var value2 = $('.js-total2').html($('.js-answer3').val());
+      var answer2 = $('.js-answer2').val();
+      var answer3 = $('.js-answer3').val();
+      var answerTotals = parseInt(answer2) + parseInt(answer3);
+      $('.js-total2').html(answerTotals);
     },
 
     render: function() {
