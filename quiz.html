@@ -11,6 +11,8 @@
 </head>
 <body>
   
+<h1>Hairy Quiz:</h1>
+<h2>A quiz addressing Very Important Issues</h2> 
 <div class="js-quizlette-view">
 </div>
   
@@ -20,10 +22,11 @@
 </div>
   
 <script type="text/template" id="quizlette_template">
+<h3>Warm Up Question</h3>
   <p class='question'>Dogs are never smelly</p>
   <select class='js-answer'>
-    <option value='0'>True</option>
-    <option value='10'>False</option>
+    <option value='Keep warming up!'>True</option>
+    <option value='You are Ready.'>False</option>
   </select>
   
   <p>Points:</p>
@@ -31,6 +34,13 @@
 </script>
 
 <script type="text/template" id="quiz_template">
+<h3>Test Your Beast Knowledge!</h3>
+  <p class='question1'>Fish talk a lot</p>
+  <select class='js-answer1'>
+    <option value='0'>True</option>
+    <option value='10'>False</option>
+  </select>
+
   <p class='question'>Cats are not Dogs</p>
   <select class='js-answer2'>
     <option value='10'>True</option>
@@ -42,6 +52,8 @@
     <option value='0'>True</option>
     <option value='10'>False</option>
   </select>
+  <br>
+  <button class="js-score">Get Score</button>
   
   <p>Points:</p>
   <p class="js-total2"></p>

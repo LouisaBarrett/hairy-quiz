@@ -23,25 +23,31 @@ $(function() {
   QuizView = Backbone.View.extend ({
     
     events: {
-      'change .js-answer2': 'pointUpdate',
-      'change .js-answer3': 'pointUpdate'
+      'click .js-score': 'getScore'
     },
     
-    pointUpdate: function(e) {
+    getScore: function(e) {
+      var answer1 = $('.js-answer1').val();
+      if (answer1 == 0) {
+        $('.js-answer1').css("background-color", "red");
+      } else {
+        $('.js-answer1').css("background-color", "lightgreen");
+      }
+
       var answer2 = $('.js-answer2').val();
       if (answer2 == 0) {
         $('.js-answer2').css("background-color", "red");
       } else {
-        $('.js-answer2').css("background-color", "green");
+        $('.js-answer2').css("background-color", "lightgreen");
       }
 
       var answer3 = $('.js-answer3').val();
       if (answer3 == 0) {
         $('.js-answer3').css("background-color", "red");
       } else {
-        $('.js-answer3').css("background-color", "green");
+        $('.js-answer3').css("background-color", "lightgreen");
       }
-      var answerTotals = parseInt(answer2) + parseInt(answer3);
+      var answerTotals = parseInt(answer1) + parseInt(answer2) + parseInt(answer3);
       $('.js-total2').html(answerTotals);
     },
 
