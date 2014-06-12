@@ -1,20 +1,20 @@
 $(function() {
-  var QuizletteView, quizletteView, QuizView, quizView;
+  var WarmupView, warmupView, QuizView, quizView;
   
-  QuizletteView = Backbone.View.extend ({
+  WarmupView = Backbone.View.extend ({
     
     events: {
-      'change .js-answer': 'pointUpdate'
+      'change .js-answer': 'warmupUpdate'
     },
     
-    pointUpdate: function(e) {
+    warmupUpdate: function(e) {
       $('.js-total').html($('.js-answer').val());
     },
     
     render: function() {
       var generate;
       
-      generate = _.template($('#quizlette_template').text());
+      generate = _.template($('#warmup_template').text());
       this.$el.html(generate);
     }
     
@@ -60,9 +60,9 @@ $(function() {
     
   });
   
-  quizletteView = new QuizletteView();
-  quizletteView.render();
-  $('.js-quizlette-view').html(quizletteView.$el);
+  warmupView = new WarmupView();
+  warmupView.render();
+  $('.js-warmup-view').html(warmupView.$el);
   
   quizView = new QuizView();
   quizView.render();
