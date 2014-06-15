@@ -4,11 +4,11 @@ $(function() {
   WarmupView = Backbone.View.extend ({
     
     events: {
-      'change .js-answer': 'warmupUpdate'
+      'click .js-get-ready': 'warmupUpdate'
     },
     
     warmupUpdate: function(e) {
-      $('.js-total').html($('.js-answer').val());
+      var answer = $('.js-total').html($('.js-answer').val());
     },
     
     render: function() {
