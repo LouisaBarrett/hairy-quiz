@@ -8,7 +8,7 @@ $(function() {
     },
     
     warmupUpdate: function(e) {
-      var answer = $('.js-total').html($('.js-answer').val());
+      var answer = $('.js-total1').html($('.js-answer1').val());
     },
     
     render: function() {
@@ -27,28 +27,30 @@ $(function() {
     },
     
     getScore: function(e) {
-      var answer1 = $('.js-answer1').val();
-      if (answer1 == 0) {
-        $('.js-answer1').css("background-color", "red");
-      } else {
-        $('.js-answer1').css("background-color", "lightgreen");
-      }
+      var total, $dropAnswer, answerTotals, scores;
+      
+      $dropAnswer = $('.js-answer');
 
-      var answer2 = $('.js-answer2').val();
-      if (answer2 == 0) {
-        $('.js-answer2').css("background-color", "red");
-      } else {
-        $('.js-answer2').css("background-color", "lightgreen");
-      }
+      scores = $dropAnswer.map(function(i, el) {
+        var answer;
 
-      var answer3 = $('.js-answer3').val();
-      if (answer3 == 0) {
-        $('.js-answer3').css("background-color", "red");
-      } else {
-        $('.js-answer3').css("background-color", "lightgreen");
-      }
-      var answerTotals = parseInt(answer1) + parseInt(answer2) + parseInt(answer3);
-      $('.js-total2').html(answerTotals);
+        answer = $(el).val();
+        
+        if (answer == 0) {
+          $(el).css("background-color", "red");
+        } else {
+          $(el).css("background-color", "green");
+        }
+
+        return answer;
+      }).toArray();
+
+      total = _.reduce(scores, function(memo, score) {
+        return memo + Number(score);
+      }, 0);
+      console.log(scores);
+
+      $('.js-total').html('<p>Points:</p>' + total);
     },
 
     render: function() {
