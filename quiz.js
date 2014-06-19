@@ -48,7 +48,6 @@ $(function() {
       total = _.reduce(scores, function(memo, score) {
         return memo + Number(score);
       }, 0);
-      console.log(scores);
 
       $('.js-total').html('<p>Points:</p>' + total);
     },
